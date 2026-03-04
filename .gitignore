@@ -1,0 +1,5 @@
+# Don't sync session transcripts (they're huge and machine-specific)
+sessions/
+
+# OS files
+.DS_Store

@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mission-football",
+      "runtimeExecutable": "/Users/markcoleman/Claude Code/mission-football/start-dev.sh",
+      "runtimeArgs": [],
+      "port": 3001
+    },
+    {
+      "name": "mvhs-flutter-web",
+      "runtimeExecutable": "/Users/markcoleman/Claude Code/mvhs_football/start-flutter-web.sh",
+      "runtimeArgs": [],
+      "port": 8080
+    }
+  ],
+  "autoVerify": true
+}
