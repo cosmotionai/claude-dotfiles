@@ -97,7 +97,6 @@
       "Bash(git init)",
       "Bash(git rm -r --cached . -q)",
       "Bash(git reset)",
-      "Bash(gh repo create markmissionfootball/mvhs-football --private --source=. --push)",
       "Bash(export PATH=\"/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH\")",
       "Bash(gh --version)",
       "Bash(bash sync.sh push)"

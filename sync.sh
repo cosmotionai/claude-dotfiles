@@ -111,19 +111,11 @@ install_new_mac() {
     # 2. Clone repos
     echo -e "${GOLD}▸ Step 2: Cloning project repos...${NC}"
     if [ ! -d "$PROJECT_DIR/mission-football/.git" ]; then
-        git clone git@github.com:markmissionfootball/mission-football.git "$PROJECT_DIR/mission-football"
+        git clone git@github.com:cosmotionai/mission-football.git "$PROJECT_DIR/mission-football"
         echo -e "${GREEN}  ✓ mission-football cloned${NC}"
     else
         echo "  ⏭ mission-football already exists, pulling latest..."
         cd "$PROJECT_DIR/mission-football" && git pull
-    fi
-
-    if [ ! -d "$PROJECT_DIR/mvhs_football/.git" ]; then
-        git clone git@github.com:markmissionfootball/mvhs-football.git "$PROJECT_DIR/mvhs_football"
-        echo -e "${GREEN}  ✓ mvhs_football cloned${NC}"
-    else
-        echo "  ⏭ mvhs_football already exists, pulling latest..."
-        cd "$PROJECT_DIR/mvhs_football" && git pull
     fi
 
     # 3. Restore Claude config
@@ -141,16 +133,16 @@ install_new_mac() {
     fi
 
     if command -v flutter &>/dev/null; then
-        cd "$PROJECT_DIR/mvhs_football" && flutter pub get
+        cd "$PROJECT_DIR/mission-football/mvhs_football" && flutter pub get
         echo -e "${GREEN}  ✓ Flutter dependencies installed${NC}"
     else
-        echo -e "${RED}  ⚠ Flutter not found — install it, then run: cd '$PROJECT_DIR/mvhs_football' && flutter pub get${NC}"
+        echo -e "${RED}  ⚠ Flutter not found — install it, then run: cd '$PROJECT_DIR/mission-football/mvhs_football' && flutter pub get${NC}"
     fi
 
     # 5. Firebase functions
-    if [ -d "$PROJECT_DIR/mvhs_football/firebase/functions" ]; then
+    if [ -d "$PROJECT_DIR/mission-football/functions" ]; then
         if command -v npm &>/dev/null; then
-            cd "$PROJECT_DIR/mvhs_football/firebase/functions" && npm install
+            cd "$PROJECT_DIR/mission-football/functions" && npm install
             echo -e "${GREEN}  ✓ Firebase functions dependencies installed${NC}"
         fi
     fi
